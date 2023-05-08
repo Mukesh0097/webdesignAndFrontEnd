@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optimize</title>
+    <style>
+        table{
+            border: 4px solid black;
+        }
+        tr:nth-child(1){
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <button id="0" onclick="clickHandler(this)">1</button>
+    <button id="1" onclick="clickHandler(this)">2</button>
+    <button id="2" onclick="clickHandler(this)">3</button>
+    <button id="3" onclick="clickHandler(this)">4</button>
+
+    <div id="root">
+
+    </div>
+
+    <script>
+        const object = {name:"",age:"",blood:""}
+        const arry1 = [{name:"mukesh",age:"34",blood:"A"},{name:"mukesh",age:"34",blood:"A"},{name:"mukesh",age:"34",blood:"A"}]
+        const arry2 = [{name:"naresh",age:"34",blood:"A"},{name:"naresh",age:"34",blood:"A"},{name:"naresh",age:"34",blood:"A"}]
+
+        const arry3 = [{name:"mahesh",age:"34",blood:"A"},{name:"mahesh",age:"34",blood:"A"},{name:"mahesh",age:"34",blood:"A"}]
+        const arry4 = [{name:"sukesh",age:"34",blood:"A"},{name:"mahesh",age:"34",blood:"A"},{name:"mahesh",age:"34",blood:"A"}]
+        const mainArry = [];
+        mainArry.push(arry1);
+        mainArry.push(arry2);
+        mainArry.push(arry3);
+        mainArry.push(arry4);
+
+        const button = document.querySelectorAll("button");
+        // const table = document.createElement("table");
+        // const thead = document.createElement("thead");
+        
+    
+
+
+    // for (const key in object) {
+    // const heading = document.createElement("th");
+    // const textnode = document.createTextNode(key);
+    // heading.appendChild(textnode);
+    // thead.appendChild(heading);
+    // }
+    // tbody.appendChild(thead);
+
+
+    // table.appendChild(tbody);
+    // document.getElementById("root").appendChild(table)
+
+    function clickHandler(object){
+        document.getElementById("root").innerHTML = "";
+        let index = parseFloat(object.id);
+        const table = document.createElement("table");
+        const tbody = document.createElement("tbody");
+        
+        table.setAttribute("id",index);
+        mainArry[index].forEach(data => {
+            const trow = document.createElement("tr");
+            trow.innerHTML += `
+                <td>${data.name}</td>
+                <td>${data.age}</td>
+                <td>${data.blood}</td>
+                `     
+            tbody.appendChild(trow)
+        });
+        table.appendChild(tbody);
+        document.getElementById("root").appendChild(table);
+        
+    }
+// "abc "+ 89 +" xyz"
+
+// `abc ${89} xyz
+
+
+
+// button.forEach(btn => {
+//     let id = btn.getAttribute("id");
+//     console.log(typeof(id));
+
+//     const clickHandler = () => {
+        
+//     if(id==='1')
+//     {
+//         arry1.forEach(data=>{
+//         const trow = document.createElement("tr");
+//         trow.setAttribute("class","tb1");
+//         for (const key in data) {
+//             trow.innerHTML += `<td>${data[key]}</td>`     
+//         }
+//         tbody.appendChild(trow);
+//         table.appendChild(tbody);
+//     document.getElementById("root").appendChild(table);
+//     })
+//     }else if(id === '2'){
+//         const trowRemove = document.getElementsByTagName("tr")
+//         console.log(trowRemove);
+//         trowRemove.forEach((data,i) => {
+//             trowRemove[i].parentNode.removeChild(trowRemove[i]);
+//         })
+        
+//         arry2.forEach(data=>{ 
+//         const trow = document.createElement("tr");
+//         trow.setAttribute("class","tb2");
+//         for (const key in data) {
+//             trow.innerHTML += `<td>${data[key]}</td>`     
+//         }
+//         tbody.appendChild(trow);
+        
+//     })
+//     table.appendChild(tbody);
+//     document.getElementById("root").append(table);
+//     }else{
+//         arry3.forEach(data=>{
+//         const trow = document.createElement("tr");
+//         for (const key in data) {
+//             trow.innerHTML += `<td>${data[key]}</td>`     
+//         }
+//         tbody.appendChild(trow);
+        
+//     })
+//     table.appendChild(tbody);
+//     document.getElementById("root").appendChild(table);
+//     }
+    
+
+    
+
+// }
+    
+//     btn.addEventListener("click",clickHandler);
+// })
+
+    
+
+
+
+
+
+        // console.log(button)
+    </script>
+</body>
+</html>
+
+<!-- const Arry1 = [
+{
+    sr.no:1,
+    title:" Binary Tree Level Order Traversal",
+    Acceptance:64.5%,
+    difficulty:"hard"
+},{
+    sr.no:1,
+    title:" Binary Tree Level Order Traversal",
+    Acceptance:64.5%,
+    difficulty:"hard"
+},{
+    sr.no:1,
+    title:" Binary Tree Level Order Traversal",
+    Acceptance:64.5%,
+    difficulty:"hard"
+}
+
+                ] -->
